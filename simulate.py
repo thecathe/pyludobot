@@ -22,7 +22,9 @@ def frame_throttling(prev: int, start: int) -> int:
     time_diff = (now - prev)/ns_ratio
     sleep_val = max(frame_len-time_diff, 0)
     print(
-        f"{i:04d} :: {datetime.timedelta(seconds=round((now-start)/ns_ratio))} @ {round(sleep_val*frame_rate*frame_rate):02d}sps | ")
+        f"{i:04d}"
+        f" : {datetime.timedelta(seconds=round((now-start)/ns_ratio))}"
+        f" @ {round(sleep_val*frame_rate*frame_rate):02d}sps | ")
     time.sleep(sleep_val)
     return time.time_ns()
 
