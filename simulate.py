@@ -69,7 +69,7 @@ p.setGravity(0, 0, -9.8)
 
 planeID = p.loadURDF("plane.urdf")
 
-p.loadSDF("box.sdf")
+p.loadSDF("boxes.sdf")
 
 if g_flags["-ft"]:
     start_time = time.time_ns()
