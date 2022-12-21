@@ -7,7 +7,7 @@ import pybullet as p
 
 g_flags = {
     "-ft": True,  # frame throttle
-    "-log": False
+    "-log": True
 }
 
 g_vars = {
@@ -26,7 +26,7 @@ if __name__ == "__main__":
             else:
                 key, val = arg.split("=", 1)
                 if key in g_vars.keys():
-                    g_vars[key] = val
+                    g_vars[key] = int(val, base=10)
                     print(f"var {key} = {val}")
                 else:
                     print(f"unknown var: {key}")
