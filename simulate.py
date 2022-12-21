@@ -27,6 +27,8 @@ def frame_throttling(prev: int, start: int) -> int:
     return time.time_ns()
 
 
+p.loadSDF("box.sdf")
+
 start_time = time.time_ns()
 prev_time = start_time
 for i in range(0, 1000):
