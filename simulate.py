@@ -1,9 +1,11 @@
 import datetime
-from typing import Tuple
-import pybullet as p
 import time
 
+import pybullet_data
+import pybullet as p
+
 physicsClient = p.connect(p.GUI)
+p.setAdditionalSearchPath(pybullet_data.getDataPath())
 
 frame_rate = 60
 frame_len = 1.0/frame_rate
@@ -30,6 +32,9 @@ def frame_throttling(prev: int, start: int) -> int:
 
 
 p.setGravity(0, 0, -9.8)
+
+planeID = p.loadURDF("plane.urdf")
+
 p.loadSDF("box.sdf")
 
 start_time = time.time_ns()
