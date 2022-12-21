@@ -29,6 +29,7 @@ def frame_throttling(prev: int, start: int) -> int:
     return time.time_ns()
 
 
+p.setGravity(0, 0, -9.8)
 p.loadSDF("box.sdf")
 
 start_time = time.time_ns()
